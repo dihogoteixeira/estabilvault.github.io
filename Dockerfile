@@ -13,7 +13,7 @@ ARG TARGETOS TARGETARCH
 # Additional metadata labels used by container registries, platforms
 # and certification scanners.
 LABEL name="Vault" \
-      maintainer="Vault Team <vault@hashicorp.com>" \
+      maintainer="EstabilVault Team <dihogo@estabilis.com>" \
       vendor="HashiCorp" \
       version=${PRODUCT_VERSION} \
       release=${PRODUCT_REVISION} \

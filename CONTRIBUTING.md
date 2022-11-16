@@ -1,7 +1,7 @@
-# Contributing to Vault
+# Contributing to estabilvault
 
 **Please note:** We take Vault's security and our users' trust very seriously.
-If you believe you have found a security issue in Vault, please responsibly
+If you believe you have found a security issue in EstabilVault, please responsibly
 disclose by contacting us at security@hashicorp.com.
 
 **First:** if you're unsure or afraid of _anything_, just ask or submit the
@@ -12,7 +12,7 @@ rules to get in the way of that.
 
 That said, if you want to ensure that a pull request is likely to be merged,
 talk to us! You can find out our thoughts and ensure that your contribution
-won't clash or be obviated by Vault's normal direction. A great way to do this
+won't clash or be obviated by EstabilVault's normal direction. A great way to do this
 is via the [Vault Discussion Forum][2].
 
 ## Issues
@@ -32,22 +32,22 @@ quickly merge or address your contributions.
 * Provide steps to reproduce the issue, and if possible include the expected 
   results as well as the actual results. Please provide text, not screen shots!
 
-* If you are seeing an internal Vault error (a status code of 5xx), please be
-  sure to post relevant parts of (or the entire) Vault log, as often these
+* If you are seeing an internal EstabilVault error (a status code of 5xx), please be
+  sure to post relevant parts of (or the entire) EstabilVault log, as often these
   errors are logged on the server but not reported to the user.
 
 * If you experienced a panic, please create a [gist](https://gist.github.com)
   of the *entire* generated crash log for us to look at. Double check
   no sensitive items were in the log.
 
-* Respond as promptly as possible to any questions made by the Vault
+* Respond as promptly as possible to any questions made by the EstabilVault
   team to your issue.
 
 ### Issue Lifecycle
 
 1. The issue is reported.
 
-2. The issue is verified and categorized by a Vault collaborator.
+2. The issue is verified and categorized by a EstabilVault collaborator.
    Categorization is done via tags. For example, bugs are marked as "bugs".
 
 3. Unless it is critical, the issue may be left for a period of time (sometimes
@@ -108,7 +108,7 @@ You do not need to include the link at the end of the summary that appears in
 CHANGELOG.md, those are generated automatically by the changelog-building 
 process.
 
-### Vault UI
+### EstabilVault UI
 
 How you contribute to the UI depends on what you want to contribute. If that is 
 a new feature, please submit an informational issue first.  That issue 
@@ -119,10 +119,10 @@ is optional but encouraged.
 Bug fixes are welcome in PRs but existing tests must pass and updated logic 
 should be handled in new tests.  You needn't submit an issue first to fix bugs.
 
-Keep in mind that the UI should be consistent with other areas of Vault. 
+Keep in mind that the UI should be consistent with other areas of EstabilVault. 
 The UI should be user-centered, informative, and include edge cases and errors— 
 including accommodations for users who may not have permissions to view or 
-interact with your feature. If you are not comfortable with UI design, a Vault
+interact with your feature. If you are not comfortable with UI design, a EstabilVault
 designer can take a look at your work— just be aware that this might mean 
 it will add some time to the PR process. 
 
@@ -130,7 +130,7 @@ Finally, in your code, try to avoid logic-heavy templates (when possible,
 calculate values in the .js file instead of .hbs) and Ember anti-patterns. 
 And most of all, if you have any questions, please ask!
 
-## Setting up Go to work on Vault
+## Setting up Go to work on EstabilVault
 
 If you have never worked with Go before, you will have to complete the
 following steps listed in the README, under the section [Developing Vault][1].

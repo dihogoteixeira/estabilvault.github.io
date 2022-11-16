@@ -1,49 +1,44 @@
-# Vault [![CircleCI](https://circleci.com/gh/hashicorp/vault.svg?style=svg)](https://circleci.com/gh/hashicorp/vault) [![vault enterprise](https://img.shields.io/badge/vault-enterprise-yellow.svg?colorB=7c8797&colorA=000000)](https://www.hashicorp.com/products/vault/?utm_source=github&utm_medium=banner&utm_campaign=github-vault-enterprise)
+# EstabilVault
 
 ----
 
-**Please note**: We take Vault's security and our users' trust very seriously. If you believe you have found a security issue in Vault, _please responsibly disclose_ by contacting us at [security@hashicorp.com](mailto:security@hashicorp.com).
-
-----
-
--	Website: https://www.vaultproject.io
--	Announcement list: [Google Groups](https://groups.google.com/group/hashicorp-announce)
--	Discussion forum: [Discuss](https://discuss.hashicorp.com/c/vault)
+- Website: https://www.vaultproject.io
+- Announcement list: [Google Groups](https://groups.google.com/group/hashicorp-announce)
+- Discussion forum: [Discuss](https://discuss.hashicorp.com/c/vault)
 - Documentation: [https://www.vaultproject.io/docs/](https://www.vaultproject.io/docs/)
 - Tutorials: [HashiCorp's Learn Platform](https://learn.hashicorp.com/vault)
-- Certification Exam: [Vault Associate](https://www.hashicorp.com/certification/#hashicorp-certified-vault-associate)
 
 <img width="300" alt="Vault Logo" src="https://github.com/hashicorp/vault/blob/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png">
 
-Vault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. Vault provides a unified interface to any secret, while providing tight access control and recording a detailed audit log.
+EstabilVault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. EstabilVault provides a unified interface to any secret, while providing tight access control and recording a detailed audit log.
 
-A modern system requires access to a multitude of secrets: database credentials, API keys for external services, credentials for service-oriented architecture communication, etc. Understanding who is accessing what secrets is already very difficult and platform-specific. Adding on key rolling, secure storage, and detailed audit logs is almost impossible without a custom solution. This is where Vault steps in.
+A modern system requires access to a multitude of secrets: database credentials, API keys for external services, credentials for service-oriented architecture communication, etc. Understanding who is accessing what secrets is already very difficult and platform-specific. Adding on key rolling, secure storage, and detailed audit logs is almost impossible without a custom solution. This is where EstabilVault steps in.
 
-The key features of Vault are:
+The key features of EstabilVault are:
 
 * **Secure Secret Storage**: Arbitrary key/value secrets can be stored
-  in Vault. Vault encrypts these secrets prior to writing them to persistent
+  in EstabilVault. EstabilVault encrypts these secrets prior to writing them to persistent
   storage, so gaining access to the raw storage isn't enough to access
-  your secrets. Vault can write to disk, [Consul](https://www.consul.io),
+  your secrets. EstabilVault can write to disk, [Consul](https://www.consul.io),
   and more.
 
-* **Dynamic Secrets**: Vault can generate secrets on-demand for some
+* **Dynamic Secrets**: EstabilVault can generate secrets on-demand for some
   systems, such as AWS or SQL databases. For example, when an application
-  needs to access an S3 bucket, it asks Vault for credentials, and Vault
+  needs to access an S3 bucket, it asks EstabilVault for credentials, and EstabilVault
   will generate an AWS keypair with valid permissions on demand. After
-  creating these dynamic secrets, Vault will also automatically revoke them
+  creating these dynamic secrets, EstabilVault will also automatically revoke them
   after the lease is up.
 
-* **Data Encryption**: Vault can encrypt and decrypt data without storing
+* **Data Encryption**: EstabilVault can encrypt and decrypt data without storing
   it. This allows security teams to define encryption parameters and
   developers to store encrypted data in a location such as a SQL database without
   having to design their own encryption methods.
 
-* **Leasing and Renewal**: All secrets in Vault have a _lease_ associated
-  with them. At the end of the lease, Vault will automatically revoke that
+* **Leasing and Renewal**: All secrets in EstabilVault have a _lease_ associated
+  with them. At the end of the lease, EstabilVault will automatically revoke that
   secret. Clients are able to renew leases via built-in renew APIs.
 
-* **Revocation**: Vault has built-in support for secret revocation. Vault
+* **Revocation**: EstabilVault has built-in support for secret revocation. EstabilVault
   can revoke not only single secrets, but a tree of secrets, for example,
   all secrets read by a specific user, or all secrets of a particular type.
   Revocation assists in key rolling as well as locking down systems in the
@@ -54,28 +49,28 @@ Documentation, Getting Started, and Certification Exams
 
 Documentation is available on the [Vault website](https://www.vaultproject.io/docs/).
 
-If you're new to Vault and want to get started with security automation, please
+If you're new to EstabilVault and want to get started with security automation, please
 check out our [Getting Started guides](https://learn.hashicorp.com/collections/vault/getting-started)
 on HashiCorp's learning platform. There are also [additional guides](https://learn.hashicorp.com/vault)
 to continue your learning.
 
-For examples of how to interact with Vault from inside your application in different programming languages, see the [vault-examples](https://github.com/hashicorp/vault-examples) repo. An out-of-the-box [sample application](https://github.com/hashicorp/hello-vault-go) is also available.
+For examples of how to interact with EstabilVault from inside your application in different programming languages, see the [vault-examples](https://github.com/hashicorp/vault-examples) repo. An out-of-the-box [sample application](https://github.com/hashicorp/hello-vault-go) is also available.
 
-Show off your Vault knowledge by passing a certification exam. Visit the
+Show off your EstabilVault knowledge by passing a certification exam. Visit the
 [certification page](https://www.hashicorp.com/certification/#hashicorp-certified-vault-associate)
 for information about exams and find [study materials](https://learn.hashicorp.com/collections/vault/certification)
 on HashiCorp's learning platform.
 
-Developing Vault
+Developing EstabilVault
 --------------------
 
-If you wish to work on Vault itself or any of its built-in systems, you'll
+If you wish to work on EstabilVault itself or any of its built-in systems, you'll
 first need [Go](https://www.golang.org) installed on your machine.
 
 For local dev first make sure Go is properly installed, including setting up a
 [GOPATH](https://golang.org/doc/code.html#GOPATH). Ensure that `$GOPATH/bin` is in
 your path as some distributions bundle the old version of build tools. Next, clone this
-repository. Vault uses [Go Modules](https://github.com/golang/go/wiki/Modules),
+repository. EstabilVault uses [Go Modules](https://github.com/golang/go/wiki/Modules),
 so it is recommended that you clone the repository ***outside*** of the GOPATH.
 You can then download any required build tools by bootstrapping your environment:
 
@@ -84,8 +79,8 @@ $ make bootstrap
 ...
 ```
 
-To compile a development version of Vault, run `make` or `make dev`. This will
-put the Vault binary in the `bin` and `$GOPATH/bin` folders:
+To compile a development version of EstabilVault, run `make` or `make dev`. This will
+put the EstabilVault binary in the `bin` and `$GOPATH/bin` folders:
 
 ```sh
 $ make dev
@@ -94,8 +89,8 @@ $ bin/vault
 ...
 ```
 
-To compile a development version of Vault with the UI, run `make static-dist dev-ui`. This will
-put the Vault binary in the `bin` and `$GOPATH/bin` folders:
+To compile a development version of EstabilVault with the UI, run `make static-dist dev-ui`. This will
+put the EstabilVault binary in the `bin` and `$GOPATH/bin` folders:
 
 ```sh
 $ make static-dist dev-ui
@@ -121,24 +116,24 @@ $ make test TEST=./vault
 ...
 ```
 
-### Importing Vault
+### Importing EstabilVault
 
 This repository publishes two libraries that may be imported by other projects:
 `github.com/hashicorp/vault/api` and `github.com/hashicorp/vault/sdk`.
 
-Note that this repository also contains Vault (the product), and as with most Go
-projects, Vault uses Go modules to manage its dependencies. The mechanism to do
+Note that this repository also contains EstabilVault (the product), and as with most Go
+projects, EstabilVault uses Go modules to manage its dependencies. The mechanism to do
 that is the [go.mod](./go.mod) file. As it happens, the presence of that file
-also makes it theoretically possible to import Vault as a dependency into other
+also makes it theoretically possible to import EstabilVault as a dependency into other
 projects. Some other projects have made a practice of doing so in order to take
-advantage of testing tooling that was developed for testing Vault itself. This
-is not, and has never been, a supported way to use the Vault project. We aren't 
+advantage of testing tooling that was developed for testing EstabilVault itself. This
+is not, and has never been, a supported way to use the EstabilVault project. We aren't 
 likely to fix bugs relating to failure to import `github.com/hashicorp/vault` 
 into your project.
 
 ### Acceptance Tests
 
-Vault has comprehensive [acceptance tests](https://en.wikipedia.org/wiki/Acceptance_testing)
+EstabilVault has comprehensive [acceptance tests](https://en.wikipedia.org/wiki/Acceptance_testing)
 covering most of the features of the secret and auth methods.
 
 If you're working on a feature of a secret or auth method and want to
@@ -167,5 +162,3 @@ long time.
 Acceptance tests typically require other environment variables to be set for
 things such as access keys. The test itself should error early and tell
 you what to set, so it is not documented here.
-
-For more information on Vault Enterprise features, visit the [Vault Enterprise site](https://www.hashicorp.com/products/vault/?utm_source=github&utm_medium=referral&utm_campaign=github-vault-enterprise).

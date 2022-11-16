@@ -13,7 +13,7 @@ REM Run target.
 for %%a in (%_TARGETS%) do (if x%1==x%%a goto %%a)
 goto usage
 
-REM bin generates the releasable binaries for Vault
+REM bin generates the releasable binaries for estabilvault
 :bin
 	call :generate
 	call .\scripts\windows\build.bat "%CD%"
@@ -24,7 +24,7 @@ REM bootstrap downloads required build tools
     for %%t in (%_EXTERNAL_TOOLS%) do (go get -u -v %%t)
 	goto :eof
 
-REM dev creates binaries for testing Vault locally. These are put
+REM dev creates binaries for testing estabilvault locally. These are put
 REM into ./bin/ as well as %GOPATH%/bin
 :dev
 	call :generate
@@ -87,7 +87,7 @@ REM any common errors.
 	set _VAULT_PKG_DIRS=%TEMP%\vault-pkg-dirs.txt
 
 	go list -f {{.Dir}} ./... | findstr /v vendor >"%_VAULT_PKG_DIRS%"
-	REM Skip the first row, which is the main vault package (.*github.com/hashicorp/vault$)
+	REM Skip the first row, which is the main estabilvault package (.*github.com/hashicorp/vault$)
 	for /f "delims= skip=1" %%d in ("%_VAULT_PKG_DIRS%") do (
 		go tool vet %_VETARGS% "%%d"
 		if ERRORLEVEL 1 set _vetExitCode=1

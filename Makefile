@@ -26,11 +26,11 @@ endif
 
 default: dev
 
-# bin generates the releasable binaries for Vault
+# bin generates the releasable binaries for EstabilVault
 bin: prep
 	@CGO_ENABLED=$(CGO_ENABLED) BUILD_TAGS='$(BUILD_TAGS) ui' sh -c "'$(CURDIR)/scripts/build.sh'"
 
-# dev creates binaries for testing Vault locally. These are put
+# dev creates binaries for testing EstabilVault locally. These are put
 # into ./bin/ as well as $GOPATH/bin
 dev: prep
 	@CGO_ENABLED=$(CGO_ENABLED) BUILD_TAGS='$(BUILD_TAGS)' VAULT_DEV_BUILD=1 sh -c "'$(CURDIR)/scripts/build.sh'"
@@ -52,10 +52,10 @@ dev-dynamic-mem: dev-dynamic
 # Creates a Docker image by adding the compiled linux/amd64 binary found in ./bin.
 # The resulting image is tagged "vault:dev".
 docker-dev: prep
-	docker build --build-arg VERSION=$(GO_VERSION_MIN) --build-arg BUILD_TAGS="$(BUILD_TAGS)" -f scripts/docker/Dockerfile -t vault:dev .
+	docker build --build-arg VERSION=$(GO_VERSION_MIN) --build-arg BUILD_TAGS="$(BUILD_TAGS)" -f scripts/docker/Dockerfile -t estabilvault:dev .
 
 docker-dev-ui: prep
-	docker build --build-arg VERSION=$(GO_VERSION_MIN) --build-arg BUILD_TAGS="$(BUILD_TAGS)" -f scripts/docker/Dockerfile.ui -t vault:dev-ui .
+	docker build --build-arg VERSION=$(GO_VERSION_MIN) --build-arg BUILD_TAGS="$(BUILD_TAGS)" -f scripts/docker/Dockerfile.ui -t estabilvault:dev-ui .
 
 # test runs the unit tests and vets the code
 test: prep
@@ -155,7 +155,7 @@ test-ember-enos: install-ui-dependencies
 check-vault-in-path:
 	@VAULT_BIN=$$(command -v vault) || { echo "vault command not found"; exit 1; }; \
 		[ -x "$$VAULT_BIN" ] || { echo "$$VAULT_BIN not executable"; exit 1; }; \
-		printf "Using Vault at %s:\n\$$ vault version\n%s\n" "$$VAULT_BIN" "$$(vault version)"
+		printf "Using EstabilVault at %s:\n\$$ EstabilVault version\n%s\n" "$$VAULT_BIN" "$$(vault version)"
 
 ember-dist: install-ui-dependencies
 	@cd ui && npm rebuild node-sass
