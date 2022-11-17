@@ -1,0 +1,10 @@
+---
+title: "single where filter parameter example"
+layout: default
+---
+
+{%- assign single-params = site.data.single-param.items | where: "description" -%}
+<h2>Here is a list of all products with a description</h2>
+{%- for single-param in single-params -%}
+    <p>Description: {{ single-param.description }}</p>
+{%- endfor -%}

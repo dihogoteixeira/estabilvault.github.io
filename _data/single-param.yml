@@ -1,0 +1,5 @@
+items:
+    - title: "Item with a description"
+      description: "This is a more detailed product description"
+    - title: "Item without a description"
+      description:
