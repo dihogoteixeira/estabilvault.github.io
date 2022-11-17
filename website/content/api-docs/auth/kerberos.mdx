@@ -1,27 +1,27 @@
 ---
 layout: api
 page_title: Kerberos - Auth Methods - HTTP API
-description: This is the API documentation for the Vault Kerberos auth method plugin.
+description: This is the API documentation for the EstabilVault Kerberos auth method plugin.
 ---
 
 # Kerberos Auth Method (API)
 
 @include 'x509-sha1-deprecation.mdx'
 
-This is the API documentation for the Vault Kerberos auth method plugin. To
+This is the API documentation for the EstabilVault Kerberos auth method plugin. To
 learn more about the usage and operation, see the
-[Vault Kerberos auth method](/docs/auth/kerberos).
+[EstabilVault Kerberos auth method](/docs/auth/kerberos).
 
 This documentation assumes the Kerberos auth method is mounted at the
-`auth/kerberos` path in Vault. Since it is possible to enable auth methods at
+`auth/kerberos` path in EstabilVault. Since it is possible to enable auth methods at
 any location, please update your API calls accordingly.
 
 The Kerberos auth method validates both Kerberos and LDAP authorization,
 so both configurations are required.
 
-## Configure Vault Kerberos
+## Configure EstabilVault Kerberos
 
-This endpoint configures the keytab and service account to be used by Vault
+This endpoint configures the keytab and service account to be used by EstabilVault
 for verifying inbound SPNEGO tokens.
 
 | Method | Path                    |
@@ -33,13 +33,13 @@ for verifying inbound SPNEGO tokens.
   It should contain an entry matching the service account given. This can be
   created through the following command: `$ base64 vault.keytab > vault.keytab.base64`.
 - `service_account` `(string: <required>)` – The service account associated
-  with both the keytab entry and an LDAP service account created for Vault. Ex.:
+  with both the keytab entry and an LDAP service account created for EstabilVault. Ex.:
   `"vault_svc"`.
 - `remove_instance_name` - Removes any instance names from a Kerberos service
   principal name when parsing the keytab file. For example when this is set to true,
-  if a keytab has the service principal name `foo/localhost@example.com`, Vault
-  will strip the service principal name to just be `foo@example.com`. 
-- `add_group_aliases` - When set to true, Vault will add any LDAP groups found for 
+  if a keytab has the service principal name `foo/localhost@example.com`, EstabilVault
+  will strip the service principal name to just be `foo@example.com`.
+- `add_group_aliases` - When set to true, EstabilVault will add any LDAP groups found for
   the user as group aliases.
 
 ### Sample Request
@@ -63,7 +63,7 @@ $ curl \
 }
 ```
 
-## Read Vault Kerberos
+## Read EstabilVault Kerberos
 
 This endpoint retrieves the service account for the Kerberos auth method.
 The keytab is not returned because it is sensitive information.
@@ -141,7 +141,7 @@ This endpoint configures LDAP in the Kerberos auth method.
   authentication when providing an empty password.
 - `upndomain` `(string: "")` – The _userPrincipalDomain_ used to construct the UPN
   string for the authenticating user. The constructed UPN will appear as
-  `[username]@UPNDomain`. Example: `example.com`, which will cause vault to bind
+  `[username]@UPNDomain`. Example: `example.com`, which will cause EstabilVault to bind
   as `username@example.com`.
 - `groupfilter` `(string: "")` – Go template used when constructing the group
   membership query. The template can access the following context variables:

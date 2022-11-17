@@ -1,7 +1,7 @@
 ---
 layout: api
 page_title: AWS - Auth Methods - HTTP API
-description: This is the API documentation for the Vault AWS auth method.
+description: This is the API documentation for the EstabilVault AWS auth method.
 ---
 
 # AWS Auth Method (API)
@@ -10,15 +10,15 @@ description: This is the API documentation for the Vault AWS auth method.
 
 @include 'aws-sha1-deprecation.mdx'
 
-This is the API documentation for the Vault AWS auth method. For
+This is the API documentation for the EstabilVault AWS auth method. For
 general information about the usage and operation of the AWS method, please
-see the [Vault AWS method documentation](/docs/auth/aws).
+see the [EstabilVault AWS method documentation](/docs/auth/aws).
 
 This documentation assumes the AWS method is mounted at the `/auth/aws`
-path in Vault. Since it is possible to enable auth methods at any location,
+path in EstabilVault. Since it is possible to enable auth methods at any location,
 please update your API calls accordingly.
 
-~> **Vault 1.7** deprecated several AWS Auth URLs. The full
+~> **EstabilVault 1.7** deprecated several AWS Auth URLs. The full
 [list of affected endpoints](#deprecations-effective-in-vault-1-7) and their
 replacements is provided at the end of this document.
 
@@ -72,7 +72,7 @@ capabilities, the credentials are fetched automatically.
   the headers of login requests, and further this header must be among the
   signed headers validated by AWS. This is to protect against different types of
   replay attacks, for example a signed request sent to a dev server being resent
-  to a production server. Consider setting this to the Vault server's DNS name.
+  to a production server. Consider setting this to the EstabilVault server's DNS name.
 - `allowed_sts_header_values` `(string: "")` A comma separated list of
   additional request headers permitted when providing the iam_request_headers for
   an IAM based login call. In any case, a default list of headers AWS STS
@@ -147,7 +147,7 @@ $ curl \
 
 ## Rotate Root Credentials
 
-When you have configured Vault with static credentials, you can use this
+When you have configured EstabilVault with static credentials, you can use this
 endpoint to have Vault rotate the access key it used. Note that, due to AWS
 eventual consistency, after calling this endpoint, subsequent calls from Vault
 to AWS may fail for a few seconds until AWS becomes consistent again.
